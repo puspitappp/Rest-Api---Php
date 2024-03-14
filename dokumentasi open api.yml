@@ -1,0 +1,100 @@
+openapi: 3.0.2
+info:
+  title: Aplikasi Distribusi Barang
+  description: API untuk mengelola distribusi barang. Anggota Kelompok 9 MIC: Muhammad Zacky Zamzamy_22091397078, Nur Puspita Amalia_22091397093, Ananda Veda Basunjaya_22091397098.
+  version: '1.0'
+  contact:
+    name: Kelompok 9 MIC
+    url: http://localhost/praktek_api/apicrud.php
+    email: contact@example.com
+servers:
+  - url: http://localhost/praktek_api/apicrud.php
+paths:
+  /product:
+    get:
+      summary: Get all product
+      responses:
+        '200':
+          description: Sukses
+          content:
+            application/json:
+              example:
+                products:
+                  - id_product: 1
+                    nama_product: OPPO Reno11 Pro 5G
+                    stok: 12
+                    harga: 8400000
+                  - id_product: 2
+                    nama_product: Samsung Galaxy S24
+                    stok: 15
+                    harga: 12500000
+                  - id_product: 3
+                    nama_product: Xiaomi Redmi Note 9
+                    stok: 30
+                    harga: 3000000
+                  - id_product: 4
+                    nama_product: POCO X6 Pro 5G
+                    stok: 6
+                    harga: 5350000
+    post:
+      summary: Add a new product
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                nama_product:
+                  type: string
+                stok:
+                  type: integer
+                harga:
+                  type: number
+      responses:
+        '200':
+          description: Sukses
+        '400':
+          description: Bad request
+  '/product/{id_product}':
+    put:
+      summary: Update product by ID
+      parameters:
+        - name: id_product
+          in: path
+          required: true
+          schema:
+            type: integer
+          description: ID of the product to update
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                nama_product:
+                  type: string
+                stok:
+                  type: integer
+                harga:
+                  type: number
+      responses:
+        '200':
+          description: Product updated successfully
+        '404':
+          description: Product not found
+    delete:
+      summary: Delete product by ID
+      parameters:
+        - name: id_product
+          in: path
+          required: true
+          schema:
+            type: integer
+          description: ID of the product to delete
+      responses:
+        '204':
+          description: Product deleted successfully
+        '404':
+          description: Product not found
