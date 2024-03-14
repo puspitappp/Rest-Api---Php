@@ -12,10 +12,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     }
     echo json_encode($array_data);
 } else if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $id = $_POST['id'];
     $nama_barang = $_POST['nama_barang'];
     $stok = $_POST['stok'];
     $harga = $_POST['harga'];
-    $sql = "INSERT INTO barang (nama_barang, stok, harga) VALUES('$nama_barang', '$stok', '$harga')";
+    $sql = "INSERT INTO barang (id, nama_barang, stok, harga) VALUES('$id', '$nama_barang', '$stok', '$harga')";
     $cek = mysqli_query($koneksi, $sql);
 
     if ($cek) {
