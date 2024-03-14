@@ -14,7 +14,7 @@ https://github.com/AnandaVedaBasunjaya/RESt-API/tree/main
 DOKUMENTASI OPEN API 
 
 GENERAL
-![Screenshot (976)](https://github.com/puspitappp/Rest-Api---Php/assets/144086838/9250f195-e585-46f8-9ee0-60bd99791085)
+![Screenshot (976)](https://github.com/puspitappp/Rest-Api---Php/assets/144086838/2aef86a3-7b98-4cc7-ae6a-6181c5a8fba3)
 
 
 GET 
